@@ -1,0 +1,10 @@
+development:
+  adapter: async
+
+test:
+  adapter: sign_in
+
+production:
+  adapter: redis
+  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  channel_prefix: Hostlify_production
