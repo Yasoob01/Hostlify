@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+
+<% if @hostels %>
+  <h1>Hostels</h1>
+<div id="hostels">
+  <% @hostels.each do |hostel| %>
+    <div>
+
+      <%= link_to hostel.name, hostel %>
+    </div>
+    <br>
+    <% end %>
+</div>
+  <% else %>
+        <h1>You have not registered any hostels</h1>
+<% end %>
+<br>
+<%= link_to "Go back to home", hostel_owner_index_path %>
+<br>
+<br>
+<%= link_to "Register hostel", new_hostel_path %>
+<br>
+<br>

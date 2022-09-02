@@ -1,0 +1,7 @@
+<h3>Users Grid</h3>
+
+<div class="left">
+  <%= datagrid_form_for @users_grid, url: admin_users_path %>
+
+  <%= datagrid_table(@users_grid) %>
+</div>
