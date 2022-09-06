@@ -1,0 +1,56 @@
+<%= form_with(model: @room, url: [@hostel, @room]) do |form| %>
+  <% if @room.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+        <% @room.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label "Room Capacity: " %>
+    <%=form.number_field :room_capacity %>
+  </div>
+
+  <div>
+    <%= form.check_box("airconditioned") %>
+    <%= form.label(:airconditioned, "Room is air conditioned") %>
+  </div>
+
+
+  <div>
+    <%= form.check_box(:wifi) %>
+    <%= form.label(:wifi, "Wifi Available") %>
+  </div>
+
+
+  <div>
+    <%= form.check_box(:attached_bath) %>
+    <%= form.label(:attached_bath, "Attached Bathroom") %>
+  </div>
+
+
+  <div>
+    <%= form.check_box(:tv) %>
+    <%= form.label(:tv, "TV available") %>
+  </div>
+
+  <div>
+    <%= form.check_box(:fridge) %>
+    <%= form.label(:fridge, "Fridge Available") %>
+  </div>
+
+  <div>
+    <%= form.hidden_field(:hostel_id) %>
+  </div>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>

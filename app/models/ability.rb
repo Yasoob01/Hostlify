@@ -6,19 +6,24 @@ class Ability
   def initialize(user)
     if user.blank?
       can :read, Hostel
+
     elsif user.admin?
       can :manage, :all
+
     elsif user.hostel_owner?
-      can :manage,Hostel do |hostels|
+      can :create, Hostel
+      can [:read, :update, :index], Hostel do |hostels|
         hostels.user.id == user.id
       end
+
       can :manage, User do |users|
         users.id == user.id
       end
+
     elsif user.hostel_seeker?
       can [:read], Hostel
-    else
 
+    else
       #cannot :manage, Admin
     end
 

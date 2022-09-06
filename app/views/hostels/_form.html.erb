@@ -25,6 +25,13 @@
     <%= form.label :Rooms_Available %><br>
     <%= form.number_field :rooms_available%>
   </div>
+
+
+  <div>
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
   <div>
     <%= form.submit %>
   </div>

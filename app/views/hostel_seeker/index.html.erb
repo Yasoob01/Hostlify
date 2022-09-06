@@ -1,0 +1,11 @@
+<p>In hostel seeker</p>
+<br>
+
+
+<%@hostels.each do |hostel| %>
+  <div>
+    <%= link_to hostel.name, hostel_path(hostel) %>
+  </div>
+<% end %>
+<br>
+<%= link_to "Edit My ID", edit_hostel_seeker_path(@hostel_seeker) %>

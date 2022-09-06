@@ -9,6 +9,8 @@ class HomeController < ApplicationController
         redirect_to admin_path
       elsif current_user.hostel_owner?
         redirect_to hostel_owner_index_path
+      elsif current_user.hostel_seeker?
+        redirect_to hostel_seeker_index_path
       end
     end
   end

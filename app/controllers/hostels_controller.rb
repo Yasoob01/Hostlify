@@ -16,8 +16,6 @@ class HostelsController < ApplicationController
   end
 
   def create
-
-    puts params
     @hostel = current_user.hostels.build(hostel_params)
     if @hostel.save
       redirect_to hostel_path(@hostel)
@@ -49,7 +47,7 @@ class HostelsController < ApplicationController
 
   private
   def hostel_params
-    params.require(:hostel).permit(:name, :location, :rooms_available)
+    params.require(:hostel).permit(:name, :location, :rooms_available, :images => [])
   end
 
 end
