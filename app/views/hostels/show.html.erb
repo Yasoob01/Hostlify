@@ -14,8 +14,11 @@
 
   </div>
 <%else%>
-  <%=link_to "Back to home page", hostel_seeker_index_path %>
+  <%=link_to "Back to home page", hostel_seeker_index_path %> |
+  <%= link_to "See rooms of this hostel", hostel_rooms_path(@hostel) %>
 <%end %>
+
+
 
 <h1><%= @hostel.name %></h1>
 <h4>Location: <%= @hostel.location %></h4>

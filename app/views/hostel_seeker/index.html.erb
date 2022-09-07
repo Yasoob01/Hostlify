@@ -1,11 +1,37 @@
-<p>In hostel seeker</p>
-<br>
-
-
-<%@hostels.each do |hostel| %>
-  <div>
-    <%= link_to hostel.name, hostel_path(hostel) %>
-  </div>
-<% end %>
-<br>
 <%= link_to "Edit My ID", edit_hostel_seeker_path(@hostel_seeker) %>
+<hr>
+
+<%=render "shared/shared" %>
+
+<br>
+<%=form_with(url: hostel_seeker_index_path, method: :get) do |f| %>
+
+  <%= f.text_field 'search[location]' ,value: :location%>
+  <%=f.submit :Search%>
+
+  <br>
+  <%= f.check_box :airconditioned%>
+  <%= f.label :airconditioned %>
+
+  <br>
+  <%= f.check_box :fridge%>
+  <%= f.label :Fridge %>
+
+  <br>
+  <%= f.check_box :tv%>
+  <%= f.label :TV %>
+
+
+<% end %>
+<%if @hostels%>
+<hr>
+<%@hostels.each do |hostel| %>
+  <li>
+    <div>
+      <%= link_to hostel.name, hostel_path(hostel) %>
+    </div>
+    <hr>
+  </li>
+
+<% end %>
+<%end %>

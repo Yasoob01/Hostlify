@@ -12,7 +12,7 @@ class Ability
 
     elsif user.hostel_owner?
       can :create, Hostel
-      can [:read, :update, :index], Hostel do |hostels|
+      can [:read, :update, :index, :destroy], Hostel do |hostels|
         hostels.user.id == user.id
       end
 

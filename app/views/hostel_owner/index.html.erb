@@ -2,3 +2,9 @@
 <%=link_to "See my hostels", hostels_path%>
 <br>
 <%= link_to "Register a hostels",  new_hostel_path%>
+<br>
+<%=link_to "Edit my id", edit_hostel_owner_path(current_user.id) %>
+
+<br>
+<br>
+<%= button_to "DESTROY ID",hostel_owner_path(current_user.id), method: :delete%>

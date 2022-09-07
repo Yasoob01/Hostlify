@@ -2,7 +2,7 @@ class User < ApplicationRecord
   ROLES = %i[admin hostel_owner hostel_seeker]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_many :hostels
+  has_many :hostels, dependent: :destroy
   has_many :rooms, :through => :hostels,  dependent: :destroy
 
   devise :database_authenticatable, :registerable,
