@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<%= link_to "Add new room",new_hostel_room_path(params[:hostel_id]) %> |
+<%unless current_user.hostel_seeker? %>
+    <%= link_to "Add new room",new_hostel_room_path(params[:hostel_id]) %> |
+<%end %>
 <%= link_to "Back to hostel", hostel_path(params[:hostel_id]) %>
 
 <h1>Rooms</h1>

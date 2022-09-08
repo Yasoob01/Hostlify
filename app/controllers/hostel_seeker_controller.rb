@@ -1,7 +1,38 @@
 class HostelSeekerController < ApplicationController
   def index
     @hostel_seeker = current_user
-    @hostels = Hostel.all
+    @hostels = nil
+    if params[:search]
+      query_string = ""
+      search = params[:search]
+      location = search[:location]
+      ac = search[:airconditioned]
+      fridge = search[:fridge]
+      tv = search[:tv]
+      combine = ""
+      if location
+        query_string = query_string+"hostels.location like '%#{location}%'"
+        combine = "and"
+      end
+      if ac
+        query_string = query_string+combine+"rooms.airconditioned = '1'"
+      end
+
+      if fridge
+        query_string = query_string+combine+"rooms.fridge = '1'"
+      end
+
+      if tv
+        query_string = query_string+combine+"rooms.tv = '1'"
+      end
+
+
+      @hostels = Hostel.joins(:rooms).where(query_string).distinct
+
+    else
+      @hostels = Hostel.all
+    end
+    #debugger
   end
 
   def edit

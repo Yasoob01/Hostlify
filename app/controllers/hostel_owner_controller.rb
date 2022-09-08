@@ -20,6 +20,16 @@ class HostelOwnerController < ApplicationController
     end
   end
 
+  def destroy
+    @hostel_owner = User.find(params[:id])
+    if @hostel_owner.destroy
+      render plain: "Deleted"
+    else
+      render plain: "Can not be deleted"
+    end
+
+  end
+
   def hostel_owner_params
     params.require(:user).permit(:name, :phone, :email)
   end

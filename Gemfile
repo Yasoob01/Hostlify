@@ -10,6 +10,7 @@ gem 'cancancan'
 gem 'devise'
 gem "dotenv-rails"
 gem 'jquery-datatables-rails'
+gem 'elasticsearch-model'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
