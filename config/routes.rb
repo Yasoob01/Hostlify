@@ -12,9 +12,15 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
+
   resources :hostel_seeker
+
   resources :hostel_owner
-  resources :hostels
+
+  resources :hostels do
+    resources :rooms
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

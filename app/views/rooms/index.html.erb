@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<%= link_to "Add new room",new_hostel_room_path(params[:hostel_id]) %> |
+<%= link_to "Back to hostel", hostel_path(params[:hostel_id]) %>
+
+<h1>Rooms</h1>
+<%if @rooms.length > 0 %>
+<div id="rooms">
+  <hr>
+  <% @rooms.each do |room| %>
+    <%= room.id %>
+    <p>
+      <%= link_to "Show this room", [room.hostel, room] %>
+    </p>
+    <hr>
+  <% end %>
+</div>
+<%else %>
+    <h1>No rooms to show</h1>
+<%end %>

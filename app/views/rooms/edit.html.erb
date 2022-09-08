@@ -1,0 +1,9 @@
+<h1>Editing room</h1>
+
+<%= render "form", room: @room %>
+
+<br>
+
+<%=link_to "Go back", hostel_room_path(@room.hostel, @room) %>
+<br>
+<%=link_to "Go to hostel", hostel_path(@room.hostel)  %>

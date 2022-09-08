@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= @hostel_seeker.name %></h1>
+<h1><%= @hostel_seeker.phone %></h1>
+<h1><%= @hostel_seeker.email %></h1>
+
+<div>
+  <%= link_to "Edit this hostel seeker", edit_hostel_seeker_path(@hostel_seeker)%>
+  <br>
+  <%= link_to "Back to home page", hostel_seeker_index_path %>
+</div>

@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<label><h2>Room Capacity: <%= @room.room_capacity %></h2> </label>
+<h4>Room Facilities</h4>
+
+<ul>
+  <li>Airconditioned:  <%= (@room.airconditioned)? '<b>YES</b>' : 'NO' %> </li>
+  <li>Wifi:  <%= (@room.wifi)? 'YES' : 'NO' %> </li>
+  <li>TV:  <%= (@room.tv)? 'YES' : 'NO' %> </li>
+  <li>Attached bath:  <%= (@room.attached_bath)? 'YES' : 'NO' %> </li>
+  <li>Fridge:  <%= (@room.fridge)? 'YES' : 'NO' %> </li>
+</ul>
+<% unless current_user.role == "hostel_seeker" %>
+  <%=button_to "Delete this room", [@room.hostel, @room], method: :delete %> |
+  <%=link_to "Edit Hostel", edit_hostel_room_path(@room.hostel, @room)%> |
+  <%=link_to "Add New Hostel" , new_hostel_room_path(params[:hostel_id])%> |
+  <%=link_to "Back to home", hostels_path%>
+<%end %>

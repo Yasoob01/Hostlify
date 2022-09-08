@@ -1,11 +1,32 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= @hostel.name %></h1>
-<h4><%= @hostel.location %></h4>
-<h4><%= @hostel.rooms_available %></h4>
-<div>
-  <%= link_to "Edit this hostels", edit_hostel_path(@hostel) %> |
-  <%= link_to "Back to hostels", hostels_path %>
+<% unless current_user.hostel_seeker? %>
+  <div>
+    <%= link_to "Edit this hostel", edit_hostel_path(@hostel) %> |
 
-  <%= button_to "Destroy this hostels", @hostel, method: :delete %>
-</div>
+
+    <%= link_to "See added rooms", hostel_rooms_path(@hostel) %> |
+    <%= link_to "Add rooms", new_hostel_room_path(@hostel) %> |
+    <%= link_to "Back to my hostels", hostels_path %>
+
+
+    <%= button_to "Destroy this hostel", @hostel, method: :delete %>
+
+  </div>
+<%else%>
+  <%=link_to "Back to home page", hostel_seeker_index_path %>
+<%end %>
+
+<h1><%= @hostel.name %></h1>
+<h4>Location: <%= @hostel.location %></h4>
+<h4>Rooms Available: <%= @hostel.rooms_available %></h4>
+<% if @hostel.images.attached? %>
+  <% @hostel.images.each do |image| %>
+    <div>
+      <%=image_tag image %>
+    </div>
+  <%end %>
+<%end %>
+
+
+

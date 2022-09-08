@@ -1,24 +1,27 @@
 <p style="color: green"><%= notice %></p>
 
 
+<br>
+<%= link_to "Go back to home", hostel_owner_index_path %> |
+<%= link_to "Register hostel", new_hostel_path %>
+<hr>
 <% if @hostels %>
   <h1>Hostels</h1>
+<hr>
 <div id="hostels">
   <% @hostels.each do |hostel| %>
     <div>
-
       <%= link_to hostel.name, hostel %>
+      <br>
+      <%if hostel.images.attached? %>
+        <%= link_to image_tag(hostel.images[0]), hostel %>
+      <%end %>
     </div>
-    <br>
+    <hr>
     <% end %>
 </div>
   <% else %>
         <h1>You have not registered any hostels</h1>
 <% end %>
-<br>
-<%= link_to "Go back to home", hostel_owner_index_path %>
-<br>
-<br>
-<%= link_to "Register hostel", new_hostel_path %>
-<br>
+
 <br>
