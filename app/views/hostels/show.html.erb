@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<% unless current_user.hostel_seeker? %>
+<% unless current_user.role == "hostel_seeker" %>
   <div>
     <%= link_to "Edit this hostel", edit_hostel_path(@hostel) %> |
 
@@ -17,8 +17,6 @@
   <%=link_to "Back to home page", hostel_seeker_index_path %> |
   <%= link_to "See rooms of this hostel", hostel_rooms_path(@hostel) %>
 <%end %>
-
-
 
 <h1><%= @hostel.name %></h1>
 <h4>Location: <%= @hostel.location %></h4>

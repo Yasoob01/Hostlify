@@ -6,6 +6,9 @@ class HostelSeekerController < ApplicationController
       query_string = ""
       search = params[:search]
       location = search[:location]
+
+      #@hostels = Hostel.search(location).results
+
       ac = search[:airconditioned]
       fridge = search[:fridge]
       tv = search[:tv]
@@ -32,7 +35,6 @@ class HostelSeekerController < ApplicationController
     else
       @hostels = Hostel.all
     end
-    #debugger
   end
 
   def edit
