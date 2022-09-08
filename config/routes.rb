@@ -8,9 +8,13 @@ Rails.application.routes.draw do
     get "sign_in", to: "users/sessions#new"
   end
   get "/sign_in", to: 'home#index'
+  get "/admin", to: "admin/admin#index"
   namespace :admin do
     resources :users
   end
+  resources :hostel_seeker
+  resources :hostel_owner
+  resources :hostels
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

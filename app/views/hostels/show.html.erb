@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= @hostel.name %></h1>
+<h4><%= @hostel.location %></h4>
+<h4><%= @hostel.rooms_available %></h4>
+<div>
+  <%= link_to "Edit this hostels", edit_hostel_path(@hostel) %> |
+  <%= link_to "Back to hostels", hostels_path %>
+
+  <%= button_to "Destroy this hostels", @hostel, method: :delete %>
+</div>

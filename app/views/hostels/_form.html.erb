@@ -1,0 +1,31 @@
+<%= form_with(model: hostel) do |form| %>
+  <% if hostel.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(hostel.errors.count, "error") %> prohibited this hostel from being saved:</h2>
+
+      <ul>
+        <% hostel.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
+  </div>
+
+  <div>
+    <%= form.label :Rooms_Available %><br>
+    <%= form.number_field :rooms_available%>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

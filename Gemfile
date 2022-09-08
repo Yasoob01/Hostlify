@@ -9,14 +9,14 @@ gem 'omniauth-rails_csrf_protection', '~> 1.0'
 gem 'cancancan'
 gem 'devise'
 gem "dotenv-rails"
-
+gem 'jquery-datatables-rails'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-
+gem 'datagrid', '~> 1.6', '>= 1.6.3'
 # Use mysql as the database for Active Record
 gem "mysql2", "~> 0.5"
 
