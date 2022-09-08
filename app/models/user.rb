@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   ROLES = %i[admin hostel_owner hostel_seeker]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

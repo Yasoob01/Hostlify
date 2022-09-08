@@ -111,6 +111,13 @@ GEM
       activesupport (> 3)
       elasticsearch (~> 7)
       hashie
+    elasticsearch-persistence (7.2.1)
+      activemodel (> 4)
+      activesupport (> 4)
+      elasticsearch (~> 7)
+      elasticsearch-model (= 7.2.1)
+      hashie
+    elasticsearch-rails (7.2.1)
     elasticsearch-transport (7.4.0)
       faraday
       multi_json
@@ -252,6 +259,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    searchkick (5.0.4)
+      activemodel (>= 5.2)
+      hashie
     selenium-webdriver (4.4.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -308,6 +318,8 @@ DEPENDENCIES
   devise
   dotenv-rails
   elasticsearch-model
+  elasticsearch-persistence (~> 7.2)
+  elasticsearch-rails (~> 7.2)
   importmap-rails
   jbuilder
   jquery-datatables-rails
@@ -317,6 +329,7 @@ DEPENDENCIES
   omniauth-rails_csrf_protection (~> 1.0)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
+  searchkick (~> 5.0)
   selenium-webdriver
   sprockets-rails
   stimulus-rails
