@@ -158,7 +158,6 @@ GEM
     msgpack (1.5.6)
     multi_json (1.15.0)
     multi_xml (0.6.0)
-    mysql2 (0.5.4)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -203,6 +202,7 @@ GEM
       actionpack (>= 4.2)
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
+    pg (1.4.3)
     public_suffix (4.0.7)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -319,10 +319,10 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jquery-datatables-rails
-  mysql2 (~> 0.5)
   omniauth
   omniauth-google-oauth2
   omniauth-rails_csrf_protection (~> 1.0)
+  pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   selenium-webdriver

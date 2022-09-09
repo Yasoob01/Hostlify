@@ -8,8 +8,8 @@ class CreateRooms < ActiveRecord::Migration[7.0]
       t.boolean :attached_bath
       t.boolean :fridge
       t.integer :room_capacity
-
       t.timestamps
+
     end
   end
 end
