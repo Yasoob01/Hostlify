@@ -11,7 +11,6 @@ gem 'devise'
 gem "dotenv-rails"
 gem 'jquery-datatables-rails'
 gem 'elasticsearch-model'
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 
@@ -19,7 +18,7 @@ gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 gem "sprockets-rails"
 gem 'datagrid', '~> 1.6', '>= 1.6.3'
 # Use mysql as the database for Active Record
-gem "mysql2", "~> 0.5"
+gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -80,8 +79,8 @@ group :sign_in do
   gem "webdrivers"
 end
 
-gem "elasticsearch-rails", "~> 7.2"
+#gem "elasticsearch-rails", "~> 7.2"
 
-gem "elasticsearch-persistence", "~> 7.2"
+#gem "elasticsearch-persistence", "~> 7.2"
 
-gem "searchkick", "~> 5.0"
+#gem "searchkick", "~> 5.0"
