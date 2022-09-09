@@ -111,13 +111,6 @@ GEM
       activesupport (> 3)
       elasticsearch (~> 7)
       hashie
-    elasticsearch-persistence (7.2.1)
-      activemodel (> 4)
-      activesupport (> 4)
-      elasticsearch (~> 7)
-      elasticsearch-model (= 7.2.1)
-      hashie
-    elasticsearch-rails (7.2.1)
     elasticsearch-transport (7.4.0)
       faraday
       multi_json
@@ -160,6 +153,7 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.0)
     minitest (5.16.3)
     msgpack (1.5.6)
     multi_json (1.15.0)
@@ -180,7 +174,12 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
+    nokogiri (1.13.8)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     nokogiri (1.13.8-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
     oauth2 (1.4.10)
       faraday (>= 0.17.3, < 3.0)
@@ -259,9 +258,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    searchkick (5.0.4)
-      activemodel (>= 5.2)
-      hashie
     selenium-webdriver (4.4.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -306,7 +302,9 @@ GEM
     zeitwerk (2.6.0)
 
 PLATFORMS
+  ruby
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt
@@ -318,8 +316,6 @@ DEPENDENCIES
   devise
   dotenv-rails
   elasticsearch-model
-  elasticsearch-persistence (~> 7.2)
-  elasticsearch-rails (~> 7.2)
   importmap-rails
   jbuilder
   jquery-datatables-rails
@@ -329,7 +325,6 @@ DEPENDENCIES
   omniauth-rails_csrf_protection (~> 1.0)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
-  searchkick (~> 5.0)
   selenium-webdriver
   sprockets-rails
   stimulus-rails

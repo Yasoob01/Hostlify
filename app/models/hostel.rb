@@ -1,9 +1,9 @@
 class Hostel < ApplicationRecord
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
+  #include Elasticsearch::Model
+  #include Elasticsearch::Model::Callbacks
 
-  index_name :hostel
-  document_type self.name.downcase
+  #index_name :hostel
+  #document_type self.name.downcase
 
   belongs_to :user
   has_many :rooms, dependent: :destroy

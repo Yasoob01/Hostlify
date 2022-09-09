@@ -80,8 +80,8 @@ group :sign_in do
   gem "webdrivers"
 end
 
-gem "elasticsearch-rails", "~> 7.2"
+#gem "elasticsearch-rails", "~> 7.2"
 
-gem "elasticsearch-persistence", "~> 7.2"
+#gem "elasticsearch-persistence", "~> 7.2"
 
-gem "searchkick", "~> 5.0"
+#gem "searchkick", "~> 5.0"
